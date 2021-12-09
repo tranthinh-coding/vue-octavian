@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  .opensans {
+    font-family: "Open Sans", sans-serif !important;
+  }
+  .raleway {
+    font-family: "Raleway", sans-serif !important;
+  }
+  body {
+    @apply box-border ml-auto mr-auto overflow-x-hidden text-base max-w-[1920px] bg-white text-primary-text;
+    font-family: "Open Sans", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+  a {
+    display: block;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif;
+  }
+  h1.title {
+    @apply text-2xl sm:text-3xl md:text-4xl text-secondary-text font-extrabold;
+  }
+  h2.title {
+    @apply text-xl sm:text-2xl md:text-3xl text-secondary-text font-bold;
+  }
+  h3.title {
+    @apply text-lg sm:text-xl md:text-2xl text-secondary-text font-bold;
+  }
+  h4.title {
+    @apply text-base sm:text-lg md:text-xl text-secondary-text font-semibold;
+  }
+  h5.title {
+    @apply text-sm sm:text-base md:text-lg text-secondary-text font-semibold;
+  }
+  h6.title {
+    @apply text-xs sm:text-sm md:text-base text-secondary-text font-semibold;
+  }
+  img {
+    @apply block max-w-full;
+  }
+}
+@layer components {
+  /* ================================================ */
+  .form-group {
+    @apply w-full pb-7;
+    --danger-color: #fa6e5c;
+  }
+  .form-group label {
+    @apply w-full block relative;
+  }
+  .form-group.form-error .form-control {
+    border: 1px solid var(--danger-color);
+  }
+  .form-group.form-error .form-danger {
+    color: var(--danger-color);
+    @apply opacity-100 block;
+  }
+  .form-group .form-control {
+    @apply border  border-gray-300 transition-all duration-300 rounded-md outline-none block w-full h-full px-2 py-3;
+  }
+  .form-group .form-danger {
+    @apply absolute transition-all duration-500 top-full opacity-0 hidden left-0;
+  }
+
+  /* ============================================== */
+  .custom-scroll::-webkit-scrollbar {
+    width: 6px;
+    background-color: var(--background-f5);
+  }
+  .custom-scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+    background-color: var(--background-f5);
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #9c9c9c;
+    border-radius: var(--border-radius);
+  }
+
+  /* ============================================== */
+  .bg-footer {
+    background-color: var(--background-footer);
+  }
+  .top-full-header {
+    top: var(--header-height);
+  }
+  .text-blue-gray {
+    color: var(--blue-gray);
+  }
+  .bg-product {
+    background-color: var(--background-product);
+  }
+
+  /* ============================================= */
+  .twitter-heart {
+    width: 100px;
+    height: 100px;
+    background: url("../img/base/heart.png") no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+    transition: background-position 1s steps(28);
+    transition-duration: 0s;
+  }
+  .twitter-heart.is-active {
+    transition-duration: 1s;
+    background-position: -2800px 0;
+  }
+  .rounded-pri {
+    border-radius: var(--border-radius);
+  }
+  .pos-inherit {
+    position: inherit;
+  }
+  .fixed-bg {
+    @apply absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover z-[-1];
+  }
+  .bg-light {
+    background-color: var(--background-gray);
+  }
+  .overlay {
+    @apply absolute inset-0 bg-gray-900 bg-opacity-60;
+  }
+  .social {
+    @apply px-3 py-2 w-12 h-12 flex items-center justify-center transition-all;
+  }
+}

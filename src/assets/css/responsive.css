@@ -1,0 +1,28 @@
+@media screen and (max-width: 1200px) {
+  :root {
+    --padding-primary: 120px;
+  }
+}
+@media screen and (max-width: 991px) {
+  :root {
+    --header-height: 80px;
+    --header-height-shrink: 60px;
+    --padding-primary: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --padding-primary: 90px;
+    --header-height-shrink: 60px;
+    --header-height: 60px;
+  }
+  #slider {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1350px;
+  }
+}
