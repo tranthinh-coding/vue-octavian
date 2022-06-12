@@ -3,7 +3,7 @@
     <h1 class="title">You may also like</h1>
     <div class="mt-20"></div>
   </div>
-  <Products :products="products"></Products>
+  <Products :products="products" />
 </template>
 
 <script setup>
