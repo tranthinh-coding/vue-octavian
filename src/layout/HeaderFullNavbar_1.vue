@@ -12,7 +12,6 @@
       :style="{ color }"
     >
       <div class="relative h-full w-full">
-        <!-- ======================= -->
         <div
           @click="toRoute"
           class="absolute top-0 bottom-0 left-0 z-30 flex items-center cursor-pointer"
@@ -22,9 +21,9 @@
             @error="require('@/assets/img/logo/LogoDarkBlue.png')"
           />
         </div>
-        <!-- ======================= -->
+        
         <HeaderNavbar />
-        <!-- ======================= -->
+        
         <div class="absolute top-0 bottom-0 right-0 z-30 flex items-center justify-end">
           <Menu />
         </div>

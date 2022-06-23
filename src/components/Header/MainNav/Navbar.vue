@@ -29,9 +29,11 @@ const unactiveShow = () => {
     <!-- ==================== Menu Homepages=================== -->
     <MenuHome v-show="isActive('home')" />
 
-    <NavLink text="About Us" :to="{ name: 'AboutUs', params: {} }" />
-    <NavLink text="Services" :to="{ name: 'Services', params: {} }" />
-    <NavLink text="Blog" :to="{ name: 'Blog', params: {} }" />
+    <NavLink @click="unactiveShow" text="About Us" :to="{ name: 'AboutUs', params: {} }" />
+
+    <NavLink @click="unactiveShow" text="Services" :to="{ name: 'Services', params: {} }" />
+
+    <NavLink @click="unactiveShow" text="Blog" :to="{ name: 'Blog', params: {} }" />
 
     <div @click.self="unactiveShow" class="relative h-full flex items-center justify-center">
       <NavLink @click.prevent="activeShow('pages')" text="Pages" :to="{path: '', params: {}}">
@@ -39,7 +41,8 @@ const unactiveShow = () => {
       </NavLink>
       <MenuPages @click="unactiveShow" v-show="isActive('pages')" />
     </div>
-    <NavLink text="Contact" :to="{ name: 'Contact', params: {} }" />
+
+    <NavLink @click="unactiveShow" text="Contact" :to="{ name: 'Contact', params: {} }" />
   </div>
 </template>
 

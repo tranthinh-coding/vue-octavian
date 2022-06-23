@@ -2,10 +2,10 @@
 import { ref, inject, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useStore } from "vuex";
+import { sleep } from "@/constant/base";
 
 const route = useRoute();
 const store = useStore();
-
 const added = ref(false);
 const popup = ref(false);
 const product = inject("product");
@@ -43,7 +43,7 @@ const validate = (_options) => {
   return false;
 };
 
-const addProductToCart = () => {
+const addProductToCart = async () => {
   selectOption.value.id = product.value.id;
 
   const options = {
@@ -62,9 +62,8 @@ const addProductToCart = () => {
     popup.value = invalid;
     added.value = false;
   }
-  setTimeout(() => {
-    added.value = false;
-  }, 1000);
+  await sleep(1000);
+  added.value = false;
 };
 
 const numberWithComas = (number) => {

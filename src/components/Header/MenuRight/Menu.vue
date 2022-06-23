@@ -1,11 +1,19 @@
 <script setup>
-import { computed, provide, ref } from "vue";
+import { computed, provide, ref, defineAsyncComponent } from "vue";
 import { useStore } from "vuex";
 
-import NavRight from "@/components/Header/MenuRight/NavRight.vue";
-import HeaderMenuMobile from "@/components/Header/MenuRight/MenuMobile.vue";
-import HeaderSearchModal from "@/components/Header/MenuRight/Search.vue";
-import CartShopping from "@/components/Shop/Cart/CartShopping.vue";
+const NavRight = defineAsyncComponent(() =>
+  import("@/components/Header/MenuRight/NavRight.vue")
+);
+const HeaderMenuMobile = defineAsyncComponent(() =>
+  import("@/components/Header/MenuRight/MenuMobile.vue")
+);
+const HeaderSearchModal = defineAsyncComponent(() =>
+  import("@/components/Header/MenuRight/Search.vue")
+);
+const CartShopping = defineAsyncComponent(() =>
+  import("@/components/Shop/Cart/CartShopping.vue")
+);
 
 /**
  *
@@ -66,7 +74,7 @@ provide("products", products);
     <transition name="fadeLeftMbMenu">
       <NavRight v-show="currentNavShow" @close="closeNavRight">
         <HeaderSearchModal v-if="isShow('search')"></HeaderSearchModal>
-        <CartShopping v-else-if="isShow('cart')"></CartShopping>
+        <CartShopping @close="closeNavRight" v-else-if="isShow('cart')"></CartShopping>
         <HeaderMenuMobile v-else-if="isShow('menu')"></HeaderMenuMobile>
       </NavRight>
     </transition>

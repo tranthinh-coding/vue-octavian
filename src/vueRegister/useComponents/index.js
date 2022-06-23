@@ -15,7 +15,9 @@ const regisComponent = (app, requireComponent) => {
 export const useComponents = (app) => {
   const requireComponentSvg = require.context("@/components/Svg", false, /[A-Z]\w+\.(vue|js)$/);
   const requireComponentBase = require.context("@/components/Base", false, /[A-Z]\w+\.(vue|js)$/);
+  const requireComponentBaseAsync = require.context("@/components/Base/Async", false, /[A-Z]\w+\.(vue|js)$/);
 
   regisComponent(app, requireComponentSvg);
   regisComponent(app, requireComponentBase);
+  regisComponent(app, requireComponentBaseAsync);
 };
